@@ -71,7 +71,7 @@ public class OcogeneTest
 	public void level1ExtraCreditTestOncogeneDetectorWithEmptyHealthySequence()
 	{
 		try {
-			instance.isOncogene(new ArrayList<>(), cancerSequences, "TGC");
+			instance.isOncogene(new ArrayList<String>(), cancerSequences, "TGC");
 			fail("IllegalArgumentException not thrown as expected");
 		} catch (IllegalArgumentException e) {
 			assertEquals("healthySequences must contain at least one element", e.getMessage());
@@ -83,7 +83,7 @@ public class OcogeneTest
 	public void level1ExtraCreditTestOncogeneDetectorWithEmptyCancerSequence()
 	{
 		try {
-			instance.isOncogene(healthySequences, new ArrayList<>(), "TGC");
+			instance.isOncogene(healthySequences, new ArrayList<String>(), "TGC");
 			fail("IllegalArgumentException not thrown as expected");
 		} catch (IllegalArgumentException e) {
 			assertEquals("cancerSequences must contain at least one element", e.getMessage());
