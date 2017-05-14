@@ -11,7 +11,7 @@ public static void main(String[] args) {
 MessageEncrypter(){
 	String ans = JOptionPane.showInputDialog("Message?");
 	for (char c: ans.toCharArray()) {
-		int cc = c + 10;
+		char cc = (char) (c + 10);
 		file += cc;
 	}
 	try {

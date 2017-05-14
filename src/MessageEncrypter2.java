@@ -20,10 +20,10 @@ public class MessageEncrypter2 {
 
 		try {
 			FileReader frr = new FileReader(fileName);
-			int r = frr.read();
-			while (r != -1) {
+			char r = (char)frr.read();
+			while (r != (char)-1) {
 				System.out.print((char) (r - 10));
-				r = frr.read();
+				r = (char) frr.read();
 
 			}
 			frr.close();
