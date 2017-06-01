@@ -16,6 +16,7 @@ import javax.swing.JPanel;
 
 public class TodoList implements ActionListener {
 	String sss = "";
+	String ssss = "";
 	JLabel jl;
 	FileWriter fw;
 	ArrayList<String> list = new ArrayList<String>();
@@ -68,11 +69,14 @@ public void actionPerformed(ActionEvent e) {
 		}
 		sss += "</html>";
 		jl.setText(sss);
-		WritetoFile();
+		//WritetoFile();
 		
 	}
 	if (e.getSource() == removetask) {
-		list.remove(list.size() - 1);
+		String x = JOptionPane.showInputDialog("");
+		int inte = Integer.parseInt(x);
+		list.remove(inte);
+		sss = "<html>";
 		//look
 		for (String ss : list) {
 			sss +=ss + "<br>";
@@ -89,11 +93,20 @@ public void actionPerformed(ActionEvent e) {
 			BufferedReader br = new BufferedReader(new FileReader("src/test2.txt"));
 			
 			String line = br.readLine();
+			
 			while(line != null){
 				System.out.println(line);
+			
+								list.add(line);
 				line = br.readLine();
-				list.add(line);
+
 			}
+			ssss = "<html>";
+			for(String load: list){
+				ssss +=load + "<br>" ;
+			}
+			ssss += "<html>";
+			jl.setText(ssss);
 			
 			br.close();
 		} catch (FileNotFoundException e1) {
